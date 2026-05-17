@@ -18,8 +18,11 @@ async function dbConnection() {
         console.log(error);
     } 
 }
+// Routes
 const AuthRoutes = require("./routes/AuthRoutes");
+const noteRoutes = require("./routes/noteRoutes");
 app.use("/api", AuthRoutes);
+app.use("/api", noteRoutes);
 dbConnection();
 // Listen / Run Server
 app.listen(port, () => {
